@@ -1,6 +1,6 @@
 import "~/styles/globals.css";
 import { Rubik } from "next/font/google";
-import NavLink from "~/components/NavLink";
+import Navigation from "~/components/Navigation";
 
 const font = Rubik({
   subsets: ["latin"],
@@ -23,21 +23,7 @@ export default function RootLayout({
       <body
         className={`font-sans ${font.variable} flex min-h-screen flex-col bg-stone-100`}
       >
-        <nav className="border-b bg-white text-gray-400 shadow-sm">
-          <div className="mx-auto flex max-w-screen-xl items-center justify-between">
-            <ul className="flex items-center space-x-8 px-16 py-4">
-              <li>
-                <NavLink linkTitle="Home" path="/" />
-              </li>
-              <li>
-                <NavLink linkTitle="Airplane" path="/airplane" />
-              </li>
-              <li>
-                <NavLink linkTitle="Maze" path="/maze" />
-              </li>
-            </ul>
-          </div>
-        </nav>
+        <Navigation />
         {children}
       </body>
     </html>
